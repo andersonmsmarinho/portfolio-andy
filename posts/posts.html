@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Bem-vindo | Andy Marinho
+    </title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>
+                <span>Andy Marinho</span>
+            </li>
+            <li>
+                <a href="#">
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Na mídia
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Portfólio
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Publicações
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <article id="post-content">
+            <p>Carregando conteúdo...</p>
+        </article>
+    </main>
+    <footer>
+        <ul>
+            <span>Contato</span>
+            <li>
+                <a href="#">
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Na mídia
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    Portfólio
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+
+        async function loadPost() {
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get('id');
+            if (!postId) {
+                document.getElementById('post-content').innerHTML = "<p>Post não encontrado.</p>";
+                return;
+            }
+
+            const response = await fetch('_database/posts.csv');
+            const data = await response.text();
+            const posts = parseCSV(data);
+
+            const post = posts.find(p => p.id === postId);
+            if (!post) {
+                document.getElementById('post-content').innerHTML = "<p>Post não encontrado.</p>";
+                return;
+            }
+
+            document.getElementById('post-title').innerText = post.title;
+            document.getElementById('post-content').innerHTML = `
+                <img src="${post.image}" alt="Capa do post ${post.title}" class="post-image">
+                <time>${new Date(post.date).toLocaleDateString("pt-BR")}</time>
+                <p>${post.content}</p>
+            `;
+        }
+
+        function parseCSV(data) {
+            const rows = data.split("\n").filter(row => row.trim());
+            const headers = rows.shift().split(",");
+            return rows.map(row => {
+                const values = row.split(",");
+                return headers.reduce((acc, header, index) => {
+                    acc[header.trim()] = values[index].trim();
+                    return acc;
+                }, {});
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPost);
+    </script>
+</body>
+
+</html>

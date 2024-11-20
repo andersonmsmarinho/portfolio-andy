@@ -1,0 +1,45 @@
+#lista-publicacoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card-post:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-post .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-post h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #0077ff;
+}
+
+.card-post time {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.card-post p {
+    color: #555;
+}

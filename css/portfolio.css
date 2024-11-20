@@ -1,0 +1,46 @@
+/* Seção de Portfólio */
+#portfolio {
+    margin: 140px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+#portfolio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Estilização dos projetos */
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.projeto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.projeto h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0077ff;
+}
+
+.projeto p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
