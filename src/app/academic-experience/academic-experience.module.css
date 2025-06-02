@@ -1,0 +1,243 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #444;
+  margin: 2rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #0077ff;
+}
+
+/* Timeline styles */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #0077ff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timelineItem {
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.timelineContent {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: calc(50% - 2rem);
+  margin-left: auto;
+}
+
+.timelineItem:nth-child(odd) .timelineContent {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.timelineContent::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #0077ff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timelineItem:nth-child(odd) .timelineContent::before {
+  right: -60px;
+}
+
+.timelineItem:nth-child(even) .timelineContent::before {
+  left: -60px;
+}
+
+.degree {
+  font-size: 1.4rem;
+  color: #0077ff;
+  margin-bottom: 0.5rem;
+}
+
+.institution {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.description {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.achievements {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.achievements li::before {
+  content: '•';
+  color: #0077ff;
+  position: absolute;
+  left: 0;
+}
+
+/* Certifications and Achievements sections */
+.certificationsSection,
+.achievementsSection {
+  margin-top: 3rem;
+}
+
+.certificationsGrid,
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Certification Card styles */
+.certificationCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.certificationCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.certificationCard h3 {
+  color: #0077ff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.certificationCard .issuer {
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.certificationCard .date {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.certificationCard .description {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Language Card styles */
+.languagesSection {
+  margin-top: 3rem;
+}
+
+.languagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.languageCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.languageCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.languageCard h3 {
+  color: #0077ff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.languageCard p {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 31px;
+  }
+
+  .timelineContent {
+    width: calc(100% - 4rem);
+    margin-left: 4rem !important;
+  }
+
+  .timelineItem:nth-child(odd) .timelineContent::before,
+  .timelineItem:nth-child(even) .timelineContent::before {
+    left: -40px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+} 

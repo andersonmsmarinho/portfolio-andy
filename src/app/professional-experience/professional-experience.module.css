@@ -1,0 +1,292 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #4a5568;
+  margin: 2rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Timeline Section */
+.timelineSection {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e2e8f0;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #4299e1;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #4299e1;
+}
+
+.timelineContent {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.timelineContent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.roleHeader {
+  margin-bottom: 1rem;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.company {
+  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.period::before {
+  content: '📅';
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location::before {
+  content: '📍';
+}
+
+.description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.responsibilities {
+  margin-bottom: 1.5rem;
+}
+
+.responsibilities h3,
+.technologies h3 {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.responsibilities ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.responsibilities li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #4299e1;
+  font-weight: bold;
+}
+
+.technologies {
+  margin-top: 1.5rem;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Recognitions Section */
+.recognitionsSection {
+  margin-bottom: 4rem;
+}
+
+.recognitionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.recognitionCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.recognitionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recognitionCard h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin: 0 0 0.75rem 0;
+}
+
+.issuer {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  color: #718096;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.position {
+  display: inline-block;
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timelineItem::before {
+    left: -2rem;
+  }
+
+  .role {
+    font-size: 1.3rem;
+  }
+
+  .metaInfo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .recognitionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .timeline::before {
+    background-color: #cbd5e0;
+  }
+
+  .timelineItem::before {
+    background-color: #3182ce;
+    border-color: white;
+    box-shadow: 0 0 0 2px #3182ce;
+  }
+
+  .timelineContent,
+  .recognitionCard {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    break-inside: avoid;
+  }
+
+  .techTag,
+  .position {
+    border: 1px solid currentColor;
+  }
+} 
