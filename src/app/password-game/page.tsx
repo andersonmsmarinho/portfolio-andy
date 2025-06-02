@@ -16,6 +16,7 @@ export default function PasswordGame() {
   const [gameOver, setGameOver] = useState<boolean>(false);
   const [showSecret, setShowSecret] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
+  const [attemptsLeft, setAttemptsLeft] = useState<number>(10);
 
   // Gera um número secreto de 4 dígitos diferentes
   const generateSecretNumber = () => {
@@ -36,6 +37,7 @@ export default function PasswordGame() {
     setShowSecret(false);
     setMessage('');
     setGuess('');
+    setAttemptsLeft(10);
   }, []);
 
   useEffect(() => {
@@ -93,12 +95,16 @@ export default function PasswordGame() {
     
     setPreviousGuesses([...previousGuesses, newGuess]);
     setGuess('');
+    setAttemptsLeft(prev => prev - 1);
 
     if (bulls === 4) {
       setGameOver(true);
       setMessage('Parabéns! Você acertou o número secreto!');
+    } else if (attemptsLeft <= 1) {
+      setGameOver(true);
+      setMessage(`Fim de jogo! O número secreto era ${secretNumber}.`);
     } else {
-      setMessage('');
+      setMessage(`Tentativas restantes: ${attemptsLeft - 1}`);
     }
   };
 
@@ -154,9 +160,9 @@ export default function PasswordGame() {
           >
             {showSecret ? 'Ocultar Senha' : 'Mostrar Senha Secreta'}
           </button>
-          {gameOver && (
+          {(gameOver || attemptsLeft === 0) && (
             <button onClick={startNewGame} className={styles.restartButton}>
-              Recomeçar Jogo
+              Novo Jogo
             </button>
           )}
         </div>
@@ -166,6 +172,10 @@ export default function PasswordGame() {
             Número Secreto: {secretNumber}
           </div>
         )}
+
+        <div className={styles.attemptsCounter}>
+          Tentativas restantes: {attemptsLeft}
+        </div>
 
         <div className={styles.guessesHistory}>
           <h3>Tentativas Anteriores</h3>

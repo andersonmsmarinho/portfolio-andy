@@ -213,6 +213,70 @@
   font-weight: 500;
 }
 
+/* Technology Section */
+.techSection {
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.techCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.techCard:hover {
+  transform: translateY(-5px);
+}
+
+.techCategory {
+  color: #2d3748;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.techList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.techItem {
+  color: #4a5568;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.techItem::before {
+  content: "•";
+  color: #4299e1;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.techDescription {
+  color: #4a5568;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -252,6 +316,14 @@
   .mediaSource {
     top: 0.5rem;
     right: 0.5rem;
+  }
+
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .techCard {
+    margin: 0 1rem;
   }
 }
 

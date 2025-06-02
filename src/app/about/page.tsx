@@ -93,6 +93,27 @@ const mediaAppearances: MediaAppearance[] = [
   }
 ];
 
+const siteTechnologies = {
+  frontend: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'CSS Modules',
+    'Tailwind CSS'
+  ],
+  development: [
+    'Git & GitHub',
+    'VS Code',
+    'ESLint',
+    'Prettier',
+    'Node.js'
+  ],
+  deployment: [
+    'Vercel',
+    'Continuous Deployment'
+  ]
+};
+
 export default function AboutPage() {
   return (
     <div className={styles.container}>
@@ -148,6 +169,42 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className={styles.techSection}>
+        <h2 className={styles.sectionTitle}>Como construi este site?</h2>
+        <div className={styles.techGrid}>
+          <div className={styles.techCard}>
+            <h3 className={styles.techCategory}>Frontend</h3>
+            <ul className={styles.techList}>
+              {siteTechnologies.frontend.map((tech, index) => (
+                <li key={index} className={styles.techItem}>{tech}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.techCard}>
+            <h3 className={styles.techCategory}>Desenvolvimento</h3>
+            <ul className={styles.techList}>
+              {siteTechnologies.development.map((tech, index) => (
+                <li key={index} className={styles.techItem}>{tech}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.techCard}>
+            <h3 className={styles.techCategory}>Deploy</h3>
+            <ul className={styles.techList}>
+              {siteTechnologies.deployment.map((tech, index) => (
+                <li key={index} className={styles.techItem}>{tech}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p className={styles.techDescription}>
+          Este site foi construído utilizando tecnologias modernas e boas práticas de desenvolvimento web.
+          O Next.js foi escolhido por sua excelente performance, SEO otimizado e facilidade de desenvolvimento.
+          A combinação de TypeScript com React proporciona uma experiência de desenvolvimento robusta e segura,
+          enquanto o CSS Modules e Tailwind CSS garantem um design responsivo e consistente.
+        </p>
       </section>
 
       <section className={styles.contactSection}>
